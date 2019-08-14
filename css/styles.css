@@ -13,12 +13,26 @@ h1 {
   font-weight: 100;
 }
 
+a{
+  color: rgba(255,255,255,1);
+  text-decoration: none;
+}
+
 @keyframes pulse {
   0% {
     color: rgba(0,0,0,0);
   }
   100% {
     color: rgba(0,0,0,1);
+  }
+}
+
+@keyframes hamburger {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0.5;
   }
 }
 
@@ -38,6 +52,108 @@ h1 {
     animation: pulse 5s 1;
   }
 
+  .page-menu {
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 5vh;
+    font-stretch: expanded;
+  }
+
+  .navigation {
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 15px 20px;
+    animation: hamburger 5s 1;
+    animation-delay: 5s;
+    -webkit-animation-delay: 5s;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+  }
+
+  .button {
+    height: 2rem;
+    width: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    cursor: pointer;
+  }
+
+  .checkbox {
+    display: none;
+  }
+
+  .icon {
+    position: relative;
+  }
+
+  .icon, .icon::before, .icon::after {
+    width: 100%;
+    height: 1px;
+    background-color: #000;
+  }
+
+  .icon::before, .icon::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    transition: all .2s;
+  }
+
+  .icon::before {
+    top: -0.75rem;
+  }
+
+  .icon::after {
+    top: 0.75rem;
+  }
+
+  .button:hover .icon::before {
+    top: -1.0rem;
+  }
+
+  .button:hover .icon::after {
+    top: 1.0rem;
+  }
+
+  .checkbox:checked + .button .icon {
+    background-color: transparent;
+  }
+
+  .checkbox:checked + .button .icon::before, .checkbox:checked + .button .icon::after {
+    top: 0;
+  }
+
+  .checkbox:checked + .button .icon::before {
+    transform: rotate(135deg);
+  }
+
+  .checkbox:checked + .button .icon::after {
+    transform: rotate(-135deg);
+  }
+
+  .checkbox:checked + .button .icon::before, .checkbox:checked + .button .icon::after {
+    background-color: #fff;
+  }
+
+  #navigation-menu {
+    background: rgba(0,0,0,1);
+    position: absolute;
+    top: 0;
+    left: 0;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    display: none;
+  }
+
+  .menu-link-container {
+    margin-top:10vw;
+  }
+
 }
 
 @media (min-width: 600px) {
@@ -55,6 +171,41 @@ h1 {
     animation: pulse 5s 1;
   }
 
+  .button {
+    height: 1.5rem;
+    width: 1.5rem;
+  }
+
+  .icon::before {
+    top: -0.5rem;
+  }
+
+  .icon::after {
+    top: 0.5rem;
+  }
+
+  .button:hover .icon::before {
+    top: -.75rem;
+  }
+
+  .button:hover .icon::after {
+    top: 0.75rem;
+  }
+
+  #navigation-menu {
+    background: rgba(0,0,0,1);
+    position: absolute;
+    top: 0;
+    left: 0;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+  }
+
+  .menu-link-container {
+    margin-top:10vw;
+  }
+
 }
 
 @media (min-width: 1024px) {
@@ -70,6 +221,14 @@ h1 {
   .page-header {
     text-align: left;
     animation: pulse 5s 1;
+  }
+
+  .navigation {
+    visibility: collapse;
+  }
+
+  #navigation-menu {
+    visibility: hidden;
   }
 
 }

@@ -2,12 +2,6 @@ html {
   font-family: 'Inter', sans-serif;
 }
 
-/*@supports (font-variation-settings: normal) {
-    html {
-      font-family: 'Inter var', sans-serif;
-    }
-}*/
-
 h1 {
   padding: 10px;
   font-weight: 100;
@@ -32,7 +26,7 @@ a{
     opacity: 0;
   }
   100% {
-    opacity: 0.5;
+    opacity: 1;
   }
 }
 
@@ -74,8 +68,8 @@ a{
   }
 
   .button {
-    height: 2rem;
-    width: 2rem;
+    height: 5rem;
+    width: 5rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -104,11 +98,11 @@ a{
   }
 
   .icon::before {
-    top: -0.75rem;
+    top: -2rem;
   }
 
   .icon::after {
-    top: 0.75rem;
+    top: 2rem;
   }
 
   .button:hover .icon::before {
@@ -172,24 +166,24 @@ a{
   }
 
   .button {
-    height: 1.5rem;
-    width: 1.5rem;
+    height: 5rem;
+    width: 5rem;
   }
 
   .icon::before {
-    top: -0.5rem;
+    top: -2rem;
   }
 
   .icon::after {
-    top: 0.5rem;
+    top: 2rem;
   }
 
   .button:hover .icon::before {
-    top: -.75rem;
+    top: -2rem;
   }
 
   .button:hover .icon::after {
-    top: 0.75rem;
+    top: 2rem;
   }
 
   #navigation-menu {

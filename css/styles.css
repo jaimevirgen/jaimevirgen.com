@@ -9,13 +9,8 @@ html {
 }*/
 
 h1 {
+  padding: 10px;
   font-weight: 100;
-  font-size: 10vh;
-}
-
-.page-header {
-  text-align: center;
-  animation: pulse 5s 1;
 }
 
 @keyframes pulse {
@@ -34,6 +29,15 @@ h1 {
     background-color: rgba(0,0,0,0);
   }
 
+  h1 {
+    font-size: 8vw;
+  }
+
+  .page-header {
+    text-align: center;
+    animation: pulse 5s 1;
+  }
+
 }
 
 @media (min-width: 600px) {
@@ -42,12 +46,30 @@ h1 {
     background-color: rgba(0,0,0,0);
   }
 
+  h1 {
+    font-size: 5vh;
+  }
+
+  .page-header {
+    text-align: center;
+    animation: pulse 5s 1;
+  }
+
 }
 
 @media (min-width: 1024px) {
     
   html {
     background-color: rgba(0,0,0,0);
+  }
+
+  h1 {
+    font-size: 10vh;
+  }
+
+  .page-header {
+    text-align: left;
+    animation: pulse 5s 1;
   }
 
 }
